@@ -8,7 +8,7 @@ function App() {
 
   const passwordRef = useRef(null)
 
-  const passwordGenerator => {
+  const passwordGenerator = useCallback(() => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     if (numberAllowed) str += "0123456789"
@@ -20,6 +20,10 @@ function App() {
       
     }
 
+    setPassword(pass)
+
+
+  }, [length, numberAllowed, charAllowed, setPassword])
     setPassword(pass)
 
 
